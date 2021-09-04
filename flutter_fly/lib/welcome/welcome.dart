@@ -4,9 +4,6 @@ import 'package:flutter_fly/homepage.dart';
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return Container();
-=======
     return Scaffold(
       body: Center(
         child: SafeArea(
@@ -59,6 +56,5 @@ class WelcomeScreen extends StatelessWidget {
         ),
       ),
     );
->>>>>>> 6b3352977c7be3f54db3bed134a3b8c2f3b5b21b
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fly/homepage.dart';
 import 'package:flutter_fly/theme.dart';
+import 'package:flutter_fly/welcome/welcome.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: lightThemeData(context),
       darkTheme: darkThemeData(context),
       themeMode: ThemeMode.system,
-      home: Homepage(),
+      home: WelcomeScreen(),
     );
   }
 }
