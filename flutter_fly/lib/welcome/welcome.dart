@@ -7,8 +7,20 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: SafeArea(
-        child: Center(
-          child: Text('test'),
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Center(
+            child: Column(
+              children: [
+                Spacer(),
+                Container(
+                  child: Image.asset(""),
+                ),
+                Container(),
+                Spacer(),
+              ],
+            ),
+          ),
         ),
       ),
     );
