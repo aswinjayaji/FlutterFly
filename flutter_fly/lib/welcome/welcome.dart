@@ -7,8 +7,31 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: SafeArea(
-        child: Center(
-          child: Text('test'),
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Center(
+            child: Column(
+              children: [
+                Spacer(),
+                Stack(
+                  children: [
+                    Container(
+                      child:
+                          Image.asset("images/PNG/GitHub-Mark-120px-plus.png"),
+                    ),
+                    Container(
+                      child: Column(
+                        childern: [Text("Welcome to Github API app"),
+                        Text
+                        ],
+                      
+                    ),
+                  ],
+                ),
+                Spacer(),
+              ],
+            ),
+          ),
         ),
       ),
     );
