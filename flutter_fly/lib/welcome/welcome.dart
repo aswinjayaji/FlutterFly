@@ -13,10 +13,21 @@ class WelcomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 Spacer(),
-                Container(
-                  child: Image.asset(""),
+                Stack(
+                  children: [
+                    Container(
+                      child:
+                          Image.asset("images/PNG/GitHub-Mark-120px-plus.png"),
+                    ),
+                    Container(
+                      child: Column(
+                        childern: [Text("Welcome to Github API app"),
+                        Text
+                        ],
+                      
+                    ),
+                  ],
                 ),
-                Container(),
                 Spacer(),
               ],
             ),
