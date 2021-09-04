@@ -21,7 +21,7 @@ class All {
   All({required this.repos});
   factory All.fromJson(List<dynamic> json) {
     // ignore: deprecated_member_use
-    List<Repo> repos = new List<Repo>();
+    List<Repo> repos = [];
     repos = json.map((r) => Repo.fromJson(r)).toList();
     return All(repos: repos);
   }
