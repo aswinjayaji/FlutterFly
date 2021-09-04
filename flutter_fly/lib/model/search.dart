@@ -16,13 +16,13 @@ class Repo {
   }
 }
 
-class All {
-  List<Repo> repos;
-  All({required this.repos});
-  factory All.fromJson(List<dynamic> json) {
-    // ignore: deprecated_member_use
-    List<Repo> repos = new List<Repo>();
-    repos = json.map((r) => Repo.fromJson(r)).toList();
-    return All(repos: repos);
-  }
-}
+// class All {
+//   List<Repo> repos;
+//   All({required this.repos});
+//   factory All.fromJson(List<dynamic> json) {
+//     // ignore: deprecated_member_use
+//     List<Repo> repos = new List<Repo>();
+//     repos = json.map((r) => Repo.fromJson(r)).toList();
+//     return All(repos: repos);
+//   }
+// }
