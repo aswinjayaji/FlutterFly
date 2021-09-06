@@ -84,7 +84,8 @@ class ListCard extends StatelessWidget {
                   height: 32,
                   width: 32,
                   child: Image.asset(
-                    MediaQuery.of(context).platformBrightness == Brightness.dark
+                    MediaQuery.of(context).platformBrightness ==
+                            Brightness.light
                         ? "images/PNG/GitHub-Mark-120px-plus.png"
                         : "images/PNG/GitHub-Mark-Light-120px-plus.png",
                   ),
