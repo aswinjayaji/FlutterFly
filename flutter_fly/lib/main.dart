@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fly/homepage.dart';
 import 'package:flutter_fly/theme.dart';
 import 'package:flutter_fly/welcome/welcome.dart';
 
@@ -16,8 +15,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightThemeData(context),
       darkTheme: darkThemeData(context),
+      // themeMode: ThemeMode.dark,
+      // themeMode: ThemeMode.light,
       themeMode: ThemeMode.system,
-      
       home: WelcomeScreen(),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const kPrimaryColor = Colors.blueGrey;
+const kCardColor = Color(0xFF9E9E9E);
 const kSecondaryColor = Colors.amber;
 const kContentColorLightTheme = Color(0xFF1D1D35);
 const kContentColorDarkTheme = Color(0xFFF5FCF9);
