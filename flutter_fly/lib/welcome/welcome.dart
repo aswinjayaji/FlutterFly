@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fly/homepage.dart';
+import 'package:flutter_fly/welcome/modelsearch.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class SearchPage extends StatefulWidget {
+  const SearchPage({Key? key}) : super(key: key);
+
+  @override
+  _SearchState createState() => _SearchState();
+}
+
+class _SearchState extends State<SearchPage> {
+  bool _validate = false;
+  TextEditingController search = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,22 +42,37 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 30),
                 TextField(
+                  controller: search,
+                  autofocus: false,
                   decoration: InputDecoration(
                     // border: OutlineInputBorder(),
                     labelText: 'Enter Github Username',
                     hintText: ' Octocat',
-
+                    errorText: _validate ? "Search can't be null" : null,
                     filled: true,
                     fillColor: Colors.grey.shade50.withOpacity(0.1),
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Homepage(),
-                    ),
-                  ),
+                  onPressed: () {
+                    if (search.text.isEmpty) {
+                      setState(() {});
+                      _validate = true;
+                    } else {
+                      FocusScopeNode currentFocus = FocusScope.of(context);
+
+                      if (!currentFocus.hasPrimaryFocus) {
+                        currentFocus.unfocus();
+                      }
+                      _validate = false;
+                    }
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Search(search.text),
+                      ),
+                    );
+                  },
                   child: Text("Search"),
                 ),
                 Spacer(),
