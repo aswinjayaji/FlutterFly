@@ -14,7 +14,7 @@ class Repo {
   factory Repo.fromJson(Map<String, dynamic> json) {
     return Repo(
         name: json['name'],
-        stargazers_count: json['stargazers_count'],
+        stargazers_count: json['description'],
         commits_url: json['commits_url']);
   }
 }

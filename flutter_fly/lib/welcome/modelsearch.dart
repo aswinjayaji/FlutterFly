@@ -44,7 +44,11 @@ class _searchState extends State<Search> {
                     return ListView.builder(
                       itemCount: snapshot.data!.repos.length,
                       itemBuilder: (context, index) {
-                        return ListCard();
+                        return ListCard(
+                          snapshot.data!.repos[index].name,
+                          snapshot.data!.repos[index].stargazers_count
+                              .toString(),
+                        );
                       },
                     );
                   } else
@@ -54,9 +58,10 @@ class _searchState extends State<Search> {
 }
 
 class ListCard extends StatelessWidget {
-  const ListCard({
-    Key? key,
-  }) : super(key: key);
+  String name;
+  String description;
+
+  ListCard(this.name, this.description);
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +116,7 @@ class ListCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'repo-name',
+                        name,
                         style: TextStyle(
                           color: Color(0xFFF5F5F5),
                           fontWeight: FontWeight.bold,
@@ -120,7 +125,7 @@ class ListCard extends StatelessWidget {
                       ),
                       SizedBox(height: 6),
                       Text(
-                        'repo Description',
+                        description,
                         style:
                             TextStyle(color: Color(0xFFF5F5F5), fontSize: 16),
                       ),
