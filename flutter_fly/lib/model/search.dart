@@ -6,10 +6,11 @@ class Repo {
   late int stargazers_count;
   late String commits_url;
 
-  Repo(
-      {required this.name,
-      required this.stargazers_count,
-      required this.commits_url});
+  Repo({
+    required this.name,
+    required this.stargazers_count,
+    required this.commits_url,
+  });
 
   factory Repo.fromJson(Map<String, dynamic> json) {
     return Repo(

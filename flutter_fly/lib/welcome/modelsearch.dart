@@ -44,7 +44,8 @@ class _searchState extends State<Search> {
                     return ListView.builder(
                       itemCount: snapshot.data!.repos.length,
                       itemBuilder: (context, index) {
-                        return ListCard();
+                        return ListCard(snapshot.data!.repos[index].name,
+                            snapshot.data!.repos[index].stargazers_count);
                       },
                     );
                   } else
@@ -54,9 +55,12 @@ class _searchState extends State<Search> {
 }
 
 class ListCard extends StatelessWidget {
-  const ListCard({
-    Key? key,
-  }) : super(key: key);
+  // const ListCard({
+  //   Key? key,
+  // }) : super(key: key);
+  final String name;
+  final int stars;
+  ListCard(this.name, this.stars);
 
   @override
   Widget build(BuildContext context) {
@@ -65,30 +69,6 @@ class ListCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: [
-        //     ListTile(
-        //       leading: Icon(Icons.album),
-        //       title: Text(
-        //         'Put repo name here',
-        //         style: TextStyle(
-        //           color: Color(0xFFF5F5F5),
-        //           fontWeight: FontWeight.bold,
-        //           fontSize: 20,
-        //         ),
-        //       ),
-        //       subtitle: Text('info about the repo here'),
-        //     ),
-        //     Row(
-        //       mainAxisAlignment: MainAxisAlignment.end,
-        //       children: <Widget>[
-        //         TextButton(
-        //           child: Text('Commits'),
-        //           onPressed: () {},
-        //         ),
-        //         const SizedBox(width: 8),
-        //       ],
-        //     ),
-        //   ],
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -111,7 +91,7 @@ class ListCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'repo-name',
+                        "$name",
                         style: TextStyle(
                           color: Color(0xFFF5F5F5),
                           fontWeight: FontWeight.bold,
@@ -120,7 +100,7 @@ class ListCard extends StatelessWidget {
                       ),
                       SizedBox(height: 6),
                       Text(
-                        'repo Description',
+                        "$stars",
                         style:
                             TextStyle(color: Color(0xFFF5F5F5), fontSize: 16),
                       ),
